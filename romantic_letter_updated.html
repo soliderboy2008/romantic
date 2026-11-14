@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160f19">
+<title>Just For You ♡</title>
+<style>
+*{box-sizing:border-box}
+:root{--pink:#f0a9bd;--soft:#f8e9ed;--muted:#d7c0ca}
+body{margin:0;min-height:100vh;color:var(--soft);font-family:Georgia,"Times New Roman",serif;background:radial-gradient(ellipse at 15% 10%,rgba(164,75,107,.25),transparent 38%),radial-gradient(ellipse at 90% 90%,rgba(113,55,94,.25),transparent 42%),linear-gradient(135deg,#100d16,#241420 55%,#160f1c);display:grid;place-items:center;overflow-x:hidden;padding:28px 14px}
+.glow{position:fixed;width:340px;height:340px;border-radius:50%;filter:blur(95px);opacity:.18;pointer-events:none}
+.glow.one{background:#e66f91;top:-160px;right:-90px}.glow.two{background:#9c5b9d;bottom:-180px;left:-100px}
+.stars{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.stars span{position:absolute;color:#f6c8d2;opacity:.42;animation:drift 8s ease-in-out infinite}
+.stars span:nth-child(1){left:10%;top:20%;font-size:14px}.stars span:nth-child(2){left:85%;top:15%;font-size:20px;animation-delay:1s}.stars span:nth-child(3){left:78%;top:80%;font-size:13px;animation-delay:2s}.stars span:nth-child(4){left:18%;top:83%;font-size:18px;animation-delay:3s}
+@keyframes drift{50%{transform:translateY(-17px) rotate(12deg)}}
+main{width:min(100%,690px);position:relative;z-index:1;text-align:center}
+.panel{border:1px solid rgba(255,220,230,.16);background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));box-shadow:0 28px 90px rgba(0,0,0,.38),inset 0 1px rgba(255,255,255,.08);backdrop-filter:blur(16px);border-radius:28px;padding:clamp(28px,7vw,58px)}
+.eyebrow{color:var(--pink);text-transform:uppercase;letter-spacing:.27em;font:10px/1.6 Arial,sans-serif}
+.heart{color:#ef9eb2;font-size:32px;margin:18px 0;display:inline-block;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.13)}}
+h1{font-size:clamp(36px,8vw,58px);line-height:1.08;font-weight:normal;letter-spacing:-.035em;margin:12px 0}
+.subtitle{color:var(--muted);font:14px/1.9 Arial,sans-serif;margin:18px auto 30px;max-width:390px}
+button{border:0;border-radius:999px;padding:15px 28px;cursor:pointer;color:#28151e;background:linear-gradient(110deg,#f5c0c9,#e995ad);font:600 11px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;box-shadow:0 8px 30px rgba(225,126,157,.2);transition:transform .2s,box-shadow .2s}
+button:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(225,126,157,.32)}
+#letter{display:none;text-align:left;animation:reveal .8s ease both}
+#letter.show{display:block}
+@keyframes reveal{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.letter-head{text-align:center;margin-bottom:28px}
+h2{font-size:clamp(31px,6vw,44px);line-height:1.12;font-weight:normal;margin:10px 0;text-align:center}
+.message{font-size:clamp(16px,3.4vw,19px);line-height:1.95;color:#f4e5e9}
+.message p{margin:0 0 18px}
+.divider{display:flex;align-items:center;gap:14px;margin:28px 0;color:var(--pink);font-size:13px;letter-spacing:.2em}
+.divider:before,.divider:after{content:"";height:1px;flex:1;background:rgba(240,169,189,.28)}
+.promise{border-left:1px solid rgba(240,169,189,.55);padding:3px 0 3px 18px;margin:25px 0;color:#f0dce3;font-style:italic;line-height:1.85;font-size:17px}
+.signature{text-align:right;color:var(--pink);font-style:italic;line-height:1.85;margin-top:32px;font-size:18px}
+.signature strong{font-style:normal;letter-spacing:.04em}
+.back{display:block;margin:30px auto 0;color:var(--muted);background:transparent;box-shadow:none;border:1px solid rgba(255,220,230,.22)}
+.footer{text-align:center;color:rgba(255,235,240,.38);font:10px Arial,sans-serif;letter-spacing:.18em;margin-top:22px}
+@media(max-width:480px){.panel{border-radius:22px}.message{line-height:1.82}}
+</style>
+</head>
+<body>
+<div class="glow one"></div><div class="glow two"></div>
+<div class="stars"><span>✦</span><span>✧</span><span>✦</span><span>✧</span></div>
+<main>
+<section class="panel" id="intro">
+  <div class="eyebrow">A letter I wrote just for you</div>
+  <div class="heart">♡</div>
+  <h1>There is<br>something I need<br>you to know.</h1>
+  <p class="subtitle">If I could put everything in my heart into words, this is where I would start.</p>
+  <button id="openLetter">Open your letter&nbsp; ↗</button>
+</section>
+
+<section class="panel" id="letter" aria-live="polite">
+  <div class="letter-head">
+    <div class="eyebrow">From the deepest part of my heart</div>
+    <div class="heart">♡</div>
+    <h2>My love,</h2>
+  </div>
+  <div class="message">
+    <p>I know I have hurt you, and I am truly sorry. I wish I could take back every word, every action, and every moment that made you feel anything less than loved. You never deserved to be hurt by the person who is supposed to make you feel safe and cherished.</p>
+
+    <p>I love you more than I sometimes know how to express. You are the first person who found a place in my heart like this, and the one I want to keep choosing. You are so precious to me—not because everything is always perfect, but because you are you, and there is no one who could simply take your place.</p>
+
+    <p>I know saying “I'm sorry” cannot magically fix what happened. I don't expect you to forget your hurt just because I wrote you a letter. I only hope you can give me the chance to show you, through my actions and not just my words, that I understand where I went wrong and that I want to do better.</p>
+
+    <p>You deserve patience, honesty, tenderness, and a love that makes you feel appreciated every single day. I want to listen to you better, understand you more, and be more careful with your heart. I know I am not perfect, but I don't want to use that as an excuse. I want to grow, especially in the ways that matter to us.</p>
+
+    <p>Even on the difficult days, my feelings for you are real. I miss your presence, your voice, your little ways of making an ordinary moment feel special. I hope you never doubt how much you mean to me. You are not just someone I love; you are someone I am grateful to have in my life.</p>
+  </div>
+
+  <div class="divider">A promise from me</div>
+  <div class="promise">I can't promise that I will never make a mistake, but I can promise to take responsibility, to keep learning, and to never treat your feelings as something small. I want my actions to make you feel the love that I keep trying to put into words.</div>
+
+  <div class="message">
+    <p>Please forgive me when your heart is ready. Take the time you need. I love you, and I hope I can make you feel that love in a much better way from now on.</p>
+    <p>Thank you for being you, and for having a place in my heart that no one else has ever had.</p>
+  </div>
+
+  <div class="signature">With all my love,<br><strong>Your loving boyfriend,<br>Mohaned.</strong></div>
+  <button class="back" id="back">Read it again</button>
+</section>
+<div class="footer">MADE WITH LOVE · JUST FOR YOU</div>
+</main>
+<script>
+const intro=document.getElementById('intro');
+const letter=document.getElementById('letter');
+document.getElementById('openLetter').addEventListener('click',()=>{intro.style.display='none';letter.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('back').addEventListener('click',()=>{letter.classList.remove('show');intro.style.display='block';window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>
